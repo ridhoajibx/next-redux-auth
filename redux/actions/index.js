@@ -1,5 +1,3 @@
-import authActions from './authActions';
+import cartAction from './cartActions';
 
-export default {
-    ...authActions,
-};
+export default { cartAction };

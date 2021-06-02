@@ -1,7 +1,13 @@
+import { combineReducers } from "redux";
 
-import { combineReducers } from 'redux';
-import authReducer from './authReducer';
+// import ourTeamReducer from "./components/OurTeam/OurTeam.reducers";
+// import shopCategoriesReducer from "./components/ShopCategories/ShopCatergories.reducer";
+// import productsReducer from "./reducers/products.reducer";
+import { cartReducer } from "./cartReducer";
 
-const rootReducer = combineReducers({
-    authentication: authReducer,
+export const rootReducer = combineReducers({
+    cart: cartReducer,
+//   teamMembers: ourTeamReducer,
+//   shopCategories: shopCategoriesReducer,
+//   products: productsReducer,
 });
