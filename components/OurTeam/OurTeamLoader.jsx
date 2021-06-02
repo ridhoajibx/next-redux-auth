@@ -7,8 +7,8 @@ export default function OurTeamLoader() {
       <div className="col-12">
         <Skeleton width={200} height={30} />
       </div>
-      {[1, 2, 3, 4].map(() => (
-        <div className="col-sm-6 col-lg-3">
+      {[1, 2, 3, 4].map((i) => (
+        <div key={i} className="col-sm-6 col-lg-3">
           <Skeleton height={300} />
         </div>
       ))}
