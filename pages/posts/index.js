@@ -16,7 +16,7 @@ export default function index({ posts }) {
 }
 
 export async function getServerSideProps() {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+    const res = await axios.get(`${process.env.API_BASE_URL}/posts`)
     const posts = await res.data
 
     if (!posts) {

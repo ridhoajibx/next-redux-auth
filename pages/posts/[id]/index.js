@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ query, params }) {
     const { id } = query || params;
-    const res = await axios.get(`${process.env.API_URL}/posts/${id}`)
+    const res = await axios.get(`${process.env.API_BASE_URL}/posts/${id}`)
     const post = await res.data
 
     return { props: { post } }
