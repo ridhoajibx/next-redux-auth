@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
-import { addToCart } from "../../redux/actions";
+import { addToCart } from "../../redux/actions/cartActions";
 
 const renderProducts = (products) => {
     const dispatch = useDispatch();
