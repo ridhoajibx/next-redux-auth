@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { Button } from "../../../components";
-import Post from "../components/Post";
+import Book from "../components/Book";
 
-export default function Show({ post }) {
+export default function Show({ book }) {
     let router = useRouter();
 
     if (router.isFallback) {
@@ -12,7 +12,7 @@ export default function Show({ post }) {
 
     return (
         <div>
-            <Post {...post} />
+            <Book {...book} />
             <Button onSubmit={() => router.back()}>Back</Button>
         </div>
     )
@@ -29,8 +29,8 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ query, params }) {
     const { id } = query || params;
-    const res = await axios.get(`${process.env.API_BASE_URL}/posts/${id}`)
-    const post = await res.data
+    const res = await axios.get(`${process.env.API_BASE_URL}/Books/${id}`)
+    const book = await res.data
 
-    return { props: { post } }
+    return { props: { book } }
 }
